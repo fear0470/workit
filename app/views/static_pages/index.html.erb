@@ -40,7 +40,7 @@
       var doneValue = Boolean($(e.target).is(':checked'));
       
 
-      $.post("/tasks" + itemId, {
+      $.post("/tasks/" + itemId, {
         _method: "PUT", 
         task: {
           done: doneValue
@@ -48,7 +48,7 @@
       });
     }
 
-    $.get("/tasks").success( function ( data ) {
+    $.get("/tasks/").success( function ( data ) {
       var htmlString = "";
 
       $.each(data, function(index,  task) {
